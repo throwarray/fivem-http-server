@@ -1,7 +1,17 @@
+
 ### /http-server
 
-Basic http-server resource for fivem.
+http-server resource for fivem.
 
-__static/*__ Static assets
+[![button](https://github.com/throwarray/fivem-http-server/raw/master/static/img.png)](https://forum.fivem.net/ "FiveM Forum")
 
-__index.lua__ Server Routes and cache
+#### Usage
+
+`http://127.0.0.1:30120/http-server/index.html`
+
+`http://127.0.0.1:30120/http-server/visitors?name=Bob`
+
+
+__static/__ Static assets
+
+__index.lua__ Server routes and cache
