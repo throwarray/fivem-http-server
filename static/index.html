@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="./style.css"/>
+	</head>
+	<body>
+		/HOME
+		<div id="visitors">
+		    LOADING ...
+		</div>
+		<button id="refresh">
+		    REFRESH
+		</button>
+		<img src="./img.png" alt="">
+		<script>
+		    const refresh = document.querySelector('#refresh')
+		    const visitors = document.querySelector('#visitors')
+
+            function getCount () {
+                 fetch('./visitors', {
+                    method: 'POST',
+                    body: JSON.stringify({ name: 'Bob' })
+                }).then(
+                    success => success.json(),
+                    error => { throw error }
+                ).then(
+                    data => {
+                        visitors.innerText = data.message
+
+                        console.log('DATA', data)
+                    }
+                )
+            }
+
+            getCount()
+
+            refresh.addEventListener('click', getCount)
+		</script>
+	</body>
+</html>
