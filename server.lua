@@ -142,6 +142,10 @@ SetHttpHandler(function (req, res)
     req.path = url.path
     req.query = url.query
 
+    -- Sanitizes path by removing any '..', preventing access to files outside
+    -- the STATIC_FOLDER.
+    req.path = req.path:gsub("%.%.", "")
+
     -- Log incomming request
     Log('incomming request for', req.path, req.query)
 
